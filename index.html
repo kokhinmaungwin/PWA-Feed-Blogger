@@ -4,8 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Blogger Feed Reader PWA</title>
+
 <link rel="manifest" href="manifest.json" />
 <link rel="stylesheet" href="style.css" />
+
 </head>
 <body>
 
@@ -16,12 +18,23 @@
 <button id="loadFeedBtn">Load Feed</button>
 <button id="installBtn">Install App</button>
 
+<!-- FEED LIST -->
 <div id="feedBox"></div>
+
+<!-- PAGINATION -->
 <div id="paginationBox"></div>
+
+<!-- MODAL -->
 <div id="postModal" class="modal">
-  <div class="modal-content">
-    <span id="closeModal">&times;</span>
-    <div id="modalBody"></div>
+  <div class="modal-box">
+
+    <div class="modal-header">
+      <span id="closeModal" class="closeBtn">&times;</span>
+      <h2 id="modalTitle"></h2>
+    </div>
+
+    <div id="modalBody" class="modal-content"></div>
+
   </div>
 </div>
 
