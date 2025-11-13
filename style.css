@@ -101,6 +101,22 @@ button {
   position: relative;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
+.popup-content {
+  max-height: 80vh;
+  overflow-y: auto;
+  padding-right: 8px;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+.popup-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.popup-content * {
+  word-wrap: break-word;
+}
 
 #closeModal {
   position: absolute;
