@@ -11,6 +11,7 @@ h1 {
   color: #2196F3;
 }
 
+/* Inputs & Buttons */
 input, button {
   font-family: monospace;
   font-size: 14px;
@@ -20,10 +21,9 @@ input, button {
   box-sizing: border-box;
 }
 
-button {
-  cursor: pointer;
-}
+button { cursor: pointer; }
 
+/* Feed List */
 #feedBox {
   margin-top: 20px;
 }
@@ -54,88 +54,115 @@ button {
 }
 
 .feed-img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  display: block;
   margin-bottom: 8px;
   border-radius: 4px;
   object-fit: cover;
 }
 
+
 /* Install Button */
 #installBtn {
   display: none; 
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 10px;
   background-color: #2196F3; 
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  box-shadow: 0 3px 6px rgba(33, 150, 243, 0.4);
+  margin-bottom: 15px;
+  box-shadow: 0 3px 6px rgba(33,150,243,0.4);
   transition: background-color 0.3s ease;
 }
 
 #installBtn:hover {
-  background-color: #1976D2; 
+  background-color: #1976D2;
 }
 
-/* Modal Styles */
+
+/* ========================= */
+/*       MODAL (Popup)       */
+/* ========================= */
+
 .modal {
   display: none;
   position: fixed;
   z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0,0,0,0.6);
+  padding: 0;
+  overflow-y: auto;
 }
 
-.modal-content {
+.modal-box {
   background: #fff;
-  margin: 5% auto;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 600px;
-  position: relative;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  width: 95%;
+  max-width: 680px;
+  margin: 40px auto;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
-.popup-content {
-  max-height: 80vh;
+
+/* Fixed Header */
+.modal-header {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+}
+
+.modal-header h2 {
+  font-size: 18px;
+  margin: 0;
+  flex: 1;
+}
+
+/* Close Button */
+.closeBtn {
+  font-size: 26px;
+  cursor: pointer;
+  padding: 0 10px;
+  color: #666;
+}
+
+.closeBtn:hover {
+  color: #000;
+}
+
+/* Scrollable body */
+.modal-content {
+  padding: 18px;
   overflow-y: auto;
-  padding-right: 8px;
+  max-height: calc(90vh - 60px);
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
 }
 
-.popup-content img {
+.modal-content img {
   max-width: 100%;
   height: auto;
-}
-
-.popup-content * {
-  word-wrap: break-word;
-}
-
-#closeModal {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 24px;
-  cursor: pointer;
-  color: #555;
-}
-
-#closeModal:hover {
-  color: #000;
-}
-
-#modalBody img {
-  max-width: 100%;
   border-radius: 6px;
   margin-bottom: 10px;
 }
+
+.modal-content * {
+  word-wrap: break-word;
+}
+
+
+/* ========================= */
+/*        PAGINATION         */
+/* ========================= */
+
 #pagination {
   margin: 25px 0;
   text-align: center;
@@ -150,9 +177,10 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  box-shadow: 0 2px 6px rgba(33,150,243,0.3);
 }
 
 #pagination span {
   font-weight: bold;
-  margin: 0 15px;
+  margin: 0 10px;
 }
