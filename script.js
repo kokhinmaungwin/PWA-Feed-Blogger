@@ -4,7 +4,7 @@ const loadBtn = document.getElementById('loadFeedBtn');
 const STORAGE_KEY = 'savedFeedUrl';
 
 let currentPage = 1;
-let perPage = 5;
+let perPage = 10;
 
 // Pagination buttons
 const paginationBox = document.createElement("div");
